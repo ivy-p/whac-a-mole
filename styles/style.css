@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    box-sizing:content-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: pink;
+}
+
+.hide {
+    display: none;
+}
+
+.info-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.score-container,
+.time-container {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    text-transform: uppercase;
+}
+
+#score {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#time-left {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.grid {
+    width: 231px;
+    height: 231px;
+    display: flex;
+    flex-flow: row wrap;
+    border: 20px solid #5f8f25;
+    border-radius: 10px;
+    background-image: url('../img/pexels-colys-hat-1587548.jpg');
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.square {
+    width: 75px;
+    height: 75px;
+    border: solid black 1px;
+    overflow: hidden;
+}
+
+.mole {
+    background-image: url('../img/mole.png');
+    background-size: cover;
+    transition: ease-out 0.08s ; 
+}
+
+.mole:active {
+    background-size: 80px;
+}
+
+.game-over {
+    margin: 30px 0;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 700px) {
+
+    .info-container {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 50%;
+    }
+
+    .score-container,
+    .time-container {
+        justify-content: space-around;
+    }
+
+    .grid {
+        width: 366px;
+        height: 366px;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+    }
+
+    .mole:active {
+        background-size: 125px;
+    }
+
+   
+}
+
+@media only screen and (min-width: 1000px) {
+    .grid {
+        width: 606px;
+        height: 606px;
+    }
+
+    .square {
+        width: 200px;
+        height: 200px;
+    }
+
+   
+    .mole:active {
+        background-size: 205px;
+    }
+    
+
+    
+}
