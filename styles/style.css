@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
     background-color: pink;
 }
@@ -25,8 +25,9 @@ body {
 .info-container {
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
+    justify-content: space-around;
 }
 
 .score-container,
@@ -35,16 +36,14 @@ body {
     margin-bottom: 20px;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 1fr;
     text-transform: uppercase;
 }
 
-#score {
-    font-family: 'Press Start 2P', cursive;
-}
-
+#score,
 #time-left {
     font-family: 'Press Start 2P', cursive;
+    margin-left: 10px;
 }
 
 .grid {
@@ -52,7 +51,7 @@ body {
     height: 231px;
     display: flex;
     flex-flow: row wrap;
-    border: 20px solid #5f8f25;
+    border: 10px solid rgb(129, 99, 121);
     border-radius: 10px;
     background-image: url('../img/pexels-colys-hat-1587548.jpg');
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -76,12 +75,22 @@ body {
 }
 
 .game-over {
-    margin: 30px 0;
+    margin: 30px auto;
     font-size: 1.125rem;
     font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    margin-top: 400px;
+    margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 700px) {
+
+    body {
+        margin-top: 70px;
+    }
 
     .info-container {
         display: flex;
@@ -95,13 +104,14 @@ body {
     }
 
     .grid {
-        width: 366px;
-        height: 366px;
+        width: 476px;
+        height: 476px;
+        border: 10px solid rgb(129, 99, 121);
     }
 
     .square {
-        width: 120px;
-        height: 120px;
+        width: 156.666666667px;
+        height: 156.666666667px;
     }
 
     .mole:active {
@@ -113,13 +123,13 @@ body {
 
 @media only screen and (min-width: 1000px) {
     .grid {
-        width: 606px;
-        height: 606px;
+        width: 506px;
+        height: 506px;
     }
 
     .square {
-        width: 200px;
-        height: 200px;
+        width: 166.666666667px;
+        height: 166.666666667px;
     }
 
    

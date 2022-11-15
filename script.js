@@ -1,10 +1,12 @@
+
+
 const squares = document.querySelectorAll('.square');
 const mole = document.querySelector('.mole');
 const timeLeftDisplay = document.querySelector('#time-left');
 const scoreDisplay = document.querySelector('#score');
 const gameOverDisplay = document.querySelector('.game-over');
-const scoreContainer = document.querySelector('.score-container')
-const timeContainer = document.querySelector('.time-container')
+const scoreContainer = document.querySelector('.score-container');
+const timeContainer = document.querySelector('.time-container');
 
 // Score when the game begins
 let result = 0;
@@ -23,31 +25,31 @@ function randomSquare () {
     // Add the mole class to each randomly generated number (one at a time)
     getRandomSquare.classList.add('mole');
 
-    hitPosition = getRandomSquare.id
-};
+    hitPosition = getRandomSquare.id;
+}
 
 // Add to score each time mole is hit
 squares.forEach(square =>  {
     square.addEventListener('mousedown', () => {
         if (square.id == hitPosition) {
             result++;
-            console.log(result)
+            console.log(result);
             scoreDisplay.textContent = result;
             hitPosition = null;
         }
-    })
-})
+    });
+});
 
 // Optional: attach this function to a timer button
 function moveMole() {
-    timerId = setInterval(randomSquare, 500)
+    timerId = setInterval(randomSquare, 500);
 }
 
 moveMole();
 
 // Eventually would like to add a pop-up animation to the mole so that When mole is moved to a new square, it slides up "out of the ground"
 function countDown() {
-    currentTime--
+    currentTime--;
     timeLeftDisplay.textContent = currentTime;
 
     if (currentTime == 0) {
@@ -55,8 +57,9 @@ function countDown() {
         clearInterval(timerId);
         gameOverDisplay.classList.remove('hide');
         gameOverDisplay.textContent = `GAME OVER! Your final score is ${result}`;
-        scoreContainer.innerHTML = ""
-        timeContainer.innerHTML = ""
+        document.querySelector("body").style.marginTop = "0"
+        scoreContainer.innerHTML = "";
+        timeContainer.innerHTML = "";
     }
 }
 
